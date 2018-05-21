@@ -10,6 +10,10 @@ h1, h2, h3, h4, h5, h6{
 	font-weight:800!important
 }
 
+.content{
+	margin-top: 4.2rem;
+}
+
 .btn-xl{
 	text-transform:uppercase;
 	padding:1.5rem 3rem;
@@ -29,7 +33,7 @@ h1, h2, h3, h4, h5, h6{
 .navbar-custom{
 	padding-top:1rem;
 	padding-bottom:1rem;
-	background-color:rgba(0, 0, 0, .7)
+	background-color:rgba(0, 0, 0, 1);
 }
 
 .navbar-custom .navbar-brand{
@@ -43,7 +47,12 @@ h1, h2, h3, h4, h5, h6{
 	text-transform:uppercase;
 	font-size:.8rem;
 	font-weight:700;
-	letter-spacing:.1rem
+	letter-spacing:.1rem;
+	color: rgba(255, 255, 255, 0.8)
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link:hover{
+	color: rgba(255, 255, 255, 1)
 }
 
 header.masthead{
