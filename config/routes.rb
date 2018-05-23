@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'operazioa/transakzioa'
+  get 'user/transakzioa'
   get 'welcome/index'
 
   root 'welcome#index'

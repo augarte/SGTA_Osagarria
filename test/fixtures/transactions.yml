@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transakzio_kodea: 1
+  bidaltzaile_kz: 1
+  asuntoa: MyString
+  data: 2018-05-23
+  jasotzaile_kz: 1
+  kopurua: 9.99
+
+two:
+  transakzio_kodea: 1
+  bidaltzaile_kz: 1
+  asuntoa: MyString
+  data: 2018-05-23
+  jasotzaile_kz: 1
+  kopurua: 9.99
