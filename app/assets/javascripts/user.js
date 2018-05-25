@@ -1,16 +1,13 @@
-$document.ready(function(){
-
-	$('info_l').click(function(){
-		alert('a');
-		$('info_d').css('display: block').siblings().hide();
+$(document).ready(function(){
+	$('#info_l').click(function(){
+		$('#info_d').show().siblings().hide();
 	});
 
-	$('tBerria').click(function(){
-
+	$('#tBerria_l').click(function(){
+		$('#tBerria_d').show().siblings().hide();
 	});
 
-	$('tHistoria').click(function(){
-
+	$('#tHistoria_l').click(function(){
+		$('#tHistoria_d').show().siblings().hide();
 	});
-
 });

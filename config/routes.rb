@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get 'operazioa/transakzioa'
-  get 'user/transakzioa'
+  get 'transakzioa', to: 'operazioa#transakzioa'
   get 'welcome/index'
-
+  
   root 'welcome#index'
 
-  get 'login', to:'welcome#login'
+  get 'login', to: 'welcome#login'
   get 'signin', to: 'welcome#signin'
   post 'kontua', to: 'user#kontua'
   get 'kontua', to: 'user#kontua'
