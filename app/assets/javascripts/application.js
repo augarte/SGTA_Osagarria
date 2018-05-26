@@ -20,3 +20,13 @@
 //= require turbolinks
 //= require welcome
 //= require_tree .
+document.addEventListener("turbolinks:load", function() {
+	if ($("body").height() > $(window).height()) {
+    }
+    else{
+    	$('footer').css({'position' : 'fixed',
+    					'left' : '0',
+						'bottom' : '0',
+						'width' : '100%'});
+    }
+})

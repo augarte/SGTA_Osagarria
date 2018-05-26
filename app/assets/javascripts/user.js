@@ -1,13 +1,24 @@
 $(document).ready(function(){
+
+	var $object = $('#info_d');
+	showDiv($object);
+
 	$('#info_l').click(function(){
-		$('#info_d').show().siblings().hide();
+		var $object = $('#info_d');
+		showDiv($object);
 	});
 
 	$('#tBerria_l').click(function(){
-		$('#tBerria_d').show().siblings().hide();
+		var $object = $('#tBerria_d');
+		showDiv($object);
 	});
 
 	$('#tHistoria_l').click(function(){
-		$('#tHistoria_d').show().siblings().hide();
+		var $object = $('#tHistoria_d');
+		showDiv($object);
 	});
+
+	function showDiv(object){
+		object.show().siblings().hide();
+	};
 });
