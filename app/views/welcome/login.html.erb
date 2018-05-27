@@ -1,3 +1,18 @@
-<section>
-	<%= link_to "log", 'kontua', :method=>"POST", :class=>"navbar-link" %>
-</section>
+<% form_tag :action => :create do %>
+    <div class="field">
+        <%= label_tag :username %><br />
+        <%= text_field_tag :username %>
+    </div>
+    <div class="field">
+        <%= label_tag :password %><br />
+        <%= text_field_tag :password %>
+    </div>
+    <div class="actions">
+        <%= submit_tag %>
+    </div>
+<% end %>
+
+
+
+
+

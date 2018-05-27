@@ -1,4 +1,4 @@
-CREATE TABLE Erabiltzailea(
+CREATE TABLE users(
 	nan VARCHAR(9) NOT NULL UNIQUE,
 	izena VARCHAR(100) NOT NULL, 
 	abizenak VARCHAR(100) NOT NULL, 
