@@ -23,7 +23,7 @@ class TransactionsController < ApplicationController
     if @transaction.valid?
     	if @transaction.save
     	   redirect_to @transaction
-	end
+	end 
     else
 	render :new
     end
