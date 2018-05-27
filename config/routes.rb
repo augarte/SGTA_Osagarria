@@ -10,13 +10,11 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
-  get 'login', to: 'welcome#login'
   get 'login', to: 'user_sessions#login'
-  get 'signin', to: 'welcome#signin'
-  post 'kontua', to: 'user#kontua'
-  get 'kontua', to: 'user#kontua'
-  post 'user_sessions', to: 'user#kontua'
 
+  get 'signin', to: 'welcome#signin'
+
+  post 'user_sessions', to: 'user#kontua'
   resources :user_sessions
   post 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

@@ -13,22 +13,23 @@ default: &default
 #  <<: *default
 #  database: db/development.sqlite3
 
-<<<<<<< HEAD
 development:
   adapter: mysql2
   username: root
   password:
   host: 127.0.0.1
   port: 3306
-=======
+  database: bankua
+  pool: 5
+  timeout: 5000
+
 #development:
 #  adapter: mysql2
 #  username: root
 #  password: root
 #  host: 127.0.0.1
 #  port: 3306
->>>>>>> 823c381ab7d66681ad06afc958296568ab397f42
-  database: bankua
+#  database: bankua
 #  pool: 5
 #  timeout: 5000
 

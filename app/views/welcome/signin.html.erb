@@ -1,3 +1,29 @@
-<section>
+<section style="margin-top: 15%">
+
+    <%= form_for(   :user,
+                    :url => {:controller => 'user_sessions', :action => 'create'},
+                    :html => {:class=>"form-signin"}) do |f|%>
+
+        <div class="text-center">            
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <div class="field">
+                <%= f.label :username, :class=>"sr-only" %><br />
+                <%= f.text_field :username, :id=> "inputEmail", :class=>"form-control", placeholder:"Email address", :required => true%>
+            </div>
+            <div class="field">
+                <%= f.label :password, :class=>"sr-only"%><br />
+                <%= f.password_field :password, :id=> "inputPassword", :class=>"form-control", placeholder: "Password", :required => true%>
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            </div>
+            <div class="actions">
+                <%= f.submit :Login, :class=>"btn btn-lg btn-primary btn-block"%>
+            </div>
+            <p class="mt-5 mb-3 text-muted"></p>
+        </div>
+    <% end %>
 
 </section>
