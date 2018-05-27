@@ -1,24 +1,75 @@
-<header >
-	<nav class="navbar navbar-expand-lg navbar-light">
+<header class="headerMenu masthead text-center text-white" style="padding: 1rem; position:fixed; left: 0px; top:4rem; width: 100%">
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container" >
 			<ul class="navbar-nav ml-auto" style="width: 100%; text-align: center;">
 				<li>
-					<label id="info_l" class="nav-link" style="cursor: pointer;">Kontuaren infromazioa</label>
+					<label id="info_l" class="nav-link bold" style="cursor: pointer;">
+						Kontuaren infromazioa
+					</label>
 				</li>
 				<li>
-					<label id="tBerria_l" class="nav-link" style="cursor: pointer;">Transakzioa berria</label>	
+					<label id="tBerria_l" class="nav-link bold" style="cursor: pointer;">
+						Transakzioa berria
+					</label>	
 				</li>
 				<li>
-					<label id="tHistoria_l" class="nav-link" style="cursor: pointer;">Transakzioen historia</label>
+					<label id="tHistoria_l" class="nav-link bold" style="cursor: pointer;">
+						Transakzioen historia
+					</label>
 				</li>
 			</ul>
 		</div>
 	</nav>
+
 </header>
 
-<section style="border: 1px solid black; text-align: center">
-	<div id="info_d" class="sekzioDiv">
-		AAAaaAAAaaAAAaaAAAaaAAAaaAAAaaAAAaaAAAaa
+<section class="col-sm-12" style="margin-top: 15rem; padding: 2.5rem;">
+	<div id="info_d" class="col-sm-12 sekzioDiv">
+		<table class="infoTaula">
+			<tr>
+				<td><label class="bold">Nan: </label></td>
+				<td><label class="tab"><%=@erabiltzaileak.nan%></label></td>
+			</tr>
+			<tr>
+				<td><label class="bold">Izena: </label></td>
+				<td><label class="tab"><%=@erabiltzaileak.izena%></label></td>
+			</tr>
+			<tr>
+				<td><label class="bold">Abizena: </label></td>
+				<td><label class="tab"><%=@erabiltzaileak.abizenak%></label></td>
+			</tr>
+			<tr>
+				<td><label class="bold">Emaila: </label></td>
+				<td><label class="tab"><%=@erabiltzaileak.emaila%></label></td>
+			</tr>
+			<tr>
+				<td><label class="bold">Helbidea: </label></td>
+				<td><label class="tab"><%=@erabiltzaileak.helbidea%></label></td>
+			</tr>
+			<tr>
+				<td><label class="bold">Telefonoa: </label></td>
+				<td><label class="tab"><%=@erabiltzaileak.telefonoa%></label></td>
+			</tr>
+		</table>
+		<table class="col-sm-12 infoTaula">
+			<tr>
+				<td>
+					<label class="bold">Kontuak:</label> 
+				</td>
+			</tr>
+			<%@kontuak.each do |kontua|%>
+			<tr>
+				<td>
+					<label><%=kontua.kontu_zenbakia %></label>
+				</td>
+			</tr>
+			<%end%>
+		</table>
 	</div>
 
 	<div id="tBerria_d" class="sekzioDiv"> 
@@ -26,6 +77,21 @@
 	</div>
 
 	<div id="tHistoria_d" class="sekzioDiv">
-		CCCccCCCccCCCccCCCccCCCccCCCccCCCccCCCcc
+		<table class="col-sm-12 infoTaula">
+			<tr>
+				<td>
+					<label class="bold">Kontuak:</label> 
+				</td>
+				<td>
+					<label><%=@transakzioak.bildaltzaile_kontua%></label>
+				</td>
+			</tr>
+		</table>
+		<%=@transakzioak.id%>
+		<%=@transakzioak.bildaltzaile_kontua%>
+		<%=@transakzioak.hartzaile_kontua%>
+		<%=@transakzioak.kopurua%>
+		<%=@transakzioak.azalpena%>
+		<%=@transakzioak.data%>
 	</div>
 </section>
