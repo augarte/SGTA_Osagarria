@@ -1,0 +1,22 @@
+<h1>Transakzio berria</h1>
+<p>Egin transakzio berri bat:</p>
+<%= form_for (@transaction) do |f| %>
+  <div class="field">
+     Hartzailearen kontua: <%= f.text_field :hartzaile_kontua, placeholder: "Hartzailearen kontu zenbakia", style:"width:250px;" %>
+  </div>
+  <div class="field">
+     Transazioaren azalpena: <br/>
+     <%= f.text_field :azalpena, placeholder: "Azalpena", style:"width:400px;" %>
+  </div>
+  <div class="field">
+     Diru kopurua: <%= f.text_field :kopurua %>€
+  </div>
+  <div class="field">
+     <%= f.submit "Bidali" %>
+  </div>
+  <% @transaction.errors.full_messages.each do |message| %>
+      <div style="color: red;">
+      	* <%= message %>
+      </div>
+  <%end%>
+<% end %> 

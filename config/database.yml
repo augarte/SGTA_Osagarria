@@ -15,13 +15,13 @@ development:
 
 #development:
 #  adapter: mysql2
-  username: root
-  password: root
-  host: 127.0.0.1
-  port: 3000
+#  username: root
+#  password: root
+#  host: 127.0.0.1
+#  port: 3306
   database: bankua
-  pool: 5
-  timeout: 5000
+#  pool: 5
+#  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
