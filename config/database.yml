@@ -9,9 +9,19 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
-development:
-  <<: *default
+#development:
+#  <<: *default
 #  database: db/development.sqlite3
+
+development:
+  adapter: mysql2
+  username: root
+  password:
+  host: 127.0.0.1
+  port: 3306
+  database: bankua
+  pool: 5
+  timeout: 5000
 
 #development:
 #  adapter: mysql2
@@ -19,7 +29,7 @@ development:
 #  password: root
 #  host: 127.0.0.1
 #  port: 3306
-  database: bankua
+#  database: bankua
 #  pool: 5
 #  timeout: 5000
 

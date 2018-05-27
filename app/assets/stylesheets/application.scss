@@ -9,6 +9,32 @@ h1, h2, h3, h4, h5, h6{
 	font-weight:800!important
 }
 
+.sekzioDiv{
+	display: none;
+	margin-bottom: 4rem;
+}
+
+.submitButton{
+	background-color: #ee0979;
+	background: linear-gradient(0deg, #ff6a00 0, #ee0979 100%);
+}
+
+.tab{
+	margin-left: 3rem;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.infoTaula{
+	display: inline;
+	margin-left: 7.5%;
+	margin-right: 10%;
+	text-align: left;
+	padding-left: 0px;
+}
+
 .content{
 	margin-top: 4.2rem;
 }

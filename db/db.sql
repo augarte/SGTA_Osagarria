@@ -1,6 +1,5 @@
 DROP DATABASE `bankua`;
-CREATE DATABASE  IF NOT EXISTS `bankua` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `bankua`;
+
 -- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: 127.0.0.1    Database: bankua
@@ -28,9 +27,11 @@ DROP TABLE IF EXISTS `Accounts`;
 CREATE TABLE `Accounts` (
   `kontu_zenbakia` varchar(24) NOT NULL,
   `erabiltzaile_id` varchar(9) NOT NULL,
+  `kopurua` int(11) NOT NULL DEFAULT '0',
+  `sortze_data` date NOT NULL,
   PRIMARY KEY (`kontu_zenbakia`),
   KEY `erabiltzaile_id` (`erabiltzaile_id`),
-  CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`erabiltzaile_id`) REFERENCES `users` (`nan`)
+  CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`erabiltzaile_id`) REFERENCES `Erabiltzailea` (`nan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,6 +41,7 @@ CREATE TABLE `Accounts` (
 
 LOCK TABLES `Accounts` WRITE;
 /*!40000 ALTER TABLE `Accounts` DISABLE KEYS */;
+INSERT INTO `Accounts` VALUES ('0123456789012','01234567B',0,'2018-05-25'),('1234567890123','12345678A',0,'2018-05-25'),('1234567891234','12345678A',0,'2018-05-25');
 /*!40000 ALTER TABLE `Accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +92,7 @@ CREATE TABLE `Transactions` (
   KEY `hartzaile_kontua` (`hartzaile_kontua`),
   CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`bildaltzaile_kontua`) REFERENCES `accounts` (`kontu_zenbakia`),
   CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`hartzaile_kontua`) REFERENCES `accounts` (`kontu_zenbakia`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,6 +101,7 @@ CREATE TABLE `Transactions` (
 
 LOCK TABLES `Transactions` WRITE;
 /*!40000 ALTER TABLE `Transactions` DISABLE KEYS */;
+INSERT INTO `Transactions` VALUES (3,'1234567891234','0123456789012',100,'a','2018-05-26');
 /*!40000 ALTER TABLE `Transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,57 +132,8 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES ('12345678A','user','userA','pass','user@gmail.com',688611111,'Bilbo','2018-05-26');
+INSERT INTO `Users` VALUES ('01234567B','user2','userB','pass','user2@gmail.com',688622222,'Donostia','2018-05-27'),('12345678A','user','userA','pass','user@gmail.com',688611111,'Bilbo','2018-05-26');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `ar_internal_metadata`
---
-
-DROP TABLE IF EXISTS `ar_internal_metadata`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ar_internal_metadata` (
-  `key` varchar(255) NOT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ar_internal_metadata`
---
-
-LOCK TABLES `ar_internal_metadata` WRITE;
-/*!40000 ALTER TABLE `ar_internal_metadata` DISABLE KEYS */;
-INSERT INTO `ar_internal_metadata` VALUES ('environment','development','2018-05-25 21:31:19','2018-05-25 21:31:19');
-/*!40000 ALTER TABLE `ar_internal_metadata` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `schema_migrations`
---
-
-DROP TABLE IF EXISTS `schema_migrations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `schema_migrations` (
-  `version` varchar(255) NOT NULL,
-  PRIMARY KEY (`version`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `schema_migrations`
---
-
-LOCK TABLES `schema_migrations` WRITE;
-/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20180523181902');
-/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -191,4 +145,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-26 19:37:29
+-- Dump completed on 2018-05-27  2:20:03

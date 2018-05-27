@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  izena: MyString
+  abizena: MyString
+  pasahitza: MyString
+  emaila: MyString
+  telefonoa: MyString
+  helbidea: MyString
+  sortze_data: 2018-05-26
+  nan: MyString
+
+two:
+  izena: MyString
+  abizena: MyString
+  pasahitza: MyString
+  emaila: MyString
+  telefonoa: MyString
+  helbidea: MyString
+  sortze_data: 2018-05-26
+  nan: MyString
