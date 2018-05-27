@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_181902) do
+ActiveRecord::Schema.define(version: 2018_05_26_172424) do
 
   create_table "Accounts", primary_key: "kontu_zenbakia", id: :string, limit: 24, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "erabiltzaile_id", limit: 9, null: false
