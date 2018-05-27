@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  before_action :authenticate_user! 
 
   # GET /transactions
   def index
@@ -14,6 +15,7 @@ class TransactionsController < ApplicationController
   end
   # POST /transactions
   def create
+    #kontua = Account.find_by()
     if Transaction.last
     	@transaction = Transaction.new(transakzio_kodea: Transaction.last.transakzio_kodea + 1, bidaltzaile_kontua: 10001, azalpena: params[:transaction][:azalpena], hartzaile_kontua: params[:transaction][:hartzaile_kontua], kopurua: params[:transaction][:kopurua])
     else
@@ -27,5 +29,10 @@ class TransactionsController < ApplicationController
     else
 	render :new
     end
-  end 
+  end
+
+  # METODO PRIBATUAK
+  private
+
+
 end

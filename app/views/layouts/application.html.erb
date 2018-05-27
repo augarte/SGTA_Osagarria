@@ -21,18 +21,18 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-              <% if user_signed_in %>
+              
 		<li class="nav-item">
 		  <%= link_to "Log Out", logout_path, method: :delete, :class=>"nav-link" %>
 		</li>
-              <% else %>
+              
 	      	<li class="nav-item">
               	  <%= link_to "Sign Up", "/signin", :class=>"nav-link" %>
               	</li>
               <li class="nav-item">
                 <%= link_to "Log In", "/login", :class=>"nav-link" %>
               </li>
-	      <%end%>
+	      
             </ul>
           </div>
       </div>
