@@ -1,0 +1,11 @@
+<% @transactions.each do |transaction| %>
+  <div>
+	<%= transaction.created_at %><br/>
+	Nora: <%= transaction.hartzaile_kontua %>	
+  </div>
+  <div>
+  	<p>Azalpena: <%= transaction.azalpena %></p>
+  	<p>Kopurua: <%= transaction.kopurua %>€</p>
+  </div>
+  <hr/>
+<%end%>
