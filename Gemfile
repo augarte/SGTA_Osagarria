@@ -1,13 +1,9 @@
 source 'https://rubygems.org'
-<<<<<<< HEAD
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
-#ruby '2.4.1'
-=======
 git_source(:github) { |repo| "https://github.com/SGTA_Osagarria.git" }
-ruby '2.3.3'
+#ruby '2.3.3'
 #ruby '2.4.2'
->>>>>>> 2b83b3e1aa504938ef2a305ae8ee45902e0fd6d4
+ruby '2.4.1'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
