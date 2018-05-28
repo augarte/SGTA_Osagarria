@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :user_session
     get 'login', to: 'user_session#index'
     post 'login', to: 'user_session#create'
-    post 'logout', to: 'user_session#destroy'
+    delete 'logout', to: 'user_session#destroy'
 
   resources :new_user
     get 'signup', to: 'new_user#index'

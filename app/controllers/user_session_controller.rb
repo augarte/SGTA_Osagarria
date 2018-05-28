@@ -10,12 +10,10 @@ class UserSessionController < ApplicationController
 
 	# POST /user_session
 	def create
-		# authorized_user = User.authenticate(params[:nan],params[:password])
+		#authorized_user = User.authenticate(params[:nan],params[:password])
 		authorized_user = User.authenticate('12345678A','pass')
 		if authorized_user
 		    flash[:notice] = "Wow Welcome again"
-		    session[:user_nan] = @authorized_user.nan
-		    session[:user_izena] = @authorized_user.izena
 		    redirect_to(:action => 'home')
 		else
 		    flash[:alert] = "Invalid Username or Password"
@@ -25,7 +23,7 @@ class UserSessionController < ApplicationController
 
 	# DELETE /user_session/:id
 	def destroy
-		logout
-		redirect_to(:users, message: "Logged out")
+		session.clear
+		redirect_to(:root, message: "Logged out")
 	end
 end
