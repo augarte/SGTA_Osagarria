@@ -2,7 +2,9 @@ Rails.application.routes.draw do
  
   root 'welcome#index'
   get 'welcome/index'
+
   get 'transactions', to: 'transactions#index'
+  post 'transactions', to: 'transactions#create'
   #resources :transactions, only: [:index, :new, :create, :show]
   #get 'operazioa/transakzioa'
   #get 'transakzioa/operazioa', to: 'operazioa#transakzioa'
