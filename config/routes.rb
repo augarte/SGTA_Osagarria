@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+ 
+  root 'welcome#index'
+  get 'welcome/index'
 
   resources :accounts
   resources :transactions, only: [:index, :new, :create, :show]
@@ -8,17 +11,16 @@ Rails.application.routes.draw do
   #post 'transakzioa'
   #get 'transakzioa/show/:id', to: 'operazioa#show'
   #get 'transakzioa', to: 'operazioa#index'
-  get 'welcome/index'
-  root 'welcome#index'
 
-  #get 'login', to: 'user_sessions#login'
-
-  get 'signin', to: 'welcome#signin'
 
   get 'kontua', to: 'user#kontua'
-  post 'user_sessions', to: 'user#kontua'
-  #resources :user_sessions
-  get 'login', to: 'user_sessions#new'
-  post 'login', to: 'user_sessions#create'
-  post 'logout', to: 'user_sessions#destroy'
+
+  resources :user_session
+    get 'login', to: 'user_session#index'
+    post 'login', to: 'user_session#create'
+    post 'logout', to: 'user_session#destroy'
+
+  resources :new_user
+    get 'signup', to: 'new_user#index'
+    get 'signup', to: 'new_user#create'
 end
