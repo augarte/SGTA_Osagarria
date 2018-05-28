@@ -10,13 +10,8 @@ class UserSessionController < ApplicationController
 
 	# POST /user_session
 	def create
-		p "AAAAAAAA" 
-		p params[:nan]
-		p params[:password]
-		
-		authorized_user = User.authenticate(params[:nan],params[:password])
+		# authorized_user = User.authenticate(params[:nan],params[:password])
 		authorized_user = User.authenticate('12345678A','pass')
-
 		if authorized_user
 		    flash[:notice] = "Wow Welcome again"
 		    session[:user_nan] = @authorized_user.nan

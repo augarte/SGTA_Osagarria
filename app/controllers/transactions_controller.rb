@@ -1,12 +1,6 @@
 class TransactionsController < ApplicationController
-  before_action :authenticate_user! 
 
-  # GET /transactions
   def index
-    @transactions = Transaction.all
-  end
-  # GET /transactions/new
-  def new
     @transaction = Transaction.new
   end
   # GET /transactions/id

@@ -14,14 +14,12 @@
 					</label>
 				</li>
 				<li>
-					<label id="tBerria_l" class="nav-link bold" style="cursor: pointer;">
-						Transakzio berria
-					</label>	
-				</li>
-				<li>
 					<label id="tHistoria_l" class="nav-link bold" style="cursor: pointer;">
 						Transakzioen historia
 					</label>
+				</li>
+				<li>
+					<%= link_to "Transakzio berria", "/transactions", :class=>"nav-link" %>
 				</li>
 			</ul>
 		</div>
@@ -34,39 +32,45 @@
 		<table class="infoTaula">
 			<tr>
 				<td><label class="bold">Nan: </label></td>
-				<td><label class="tab"><%=@erabiltzaileak.nan%></label></td>
+				<td><label class="tab"><%=@erabiltzailea.nan%></label></td>
 			</tr>
 			<tr>
 				<td><label class="bold">Izena: </label></td>
-				<td><label class="tab"><%=@erabiltzaileak.izena%></label></td>
+				<td><label class="tab"><%=@erabiltzailea.izena%></label></td>
 			</tr>
 			<tr>
 				<td><label class="bold">Abizena: </label></td>
-				<td><label class="tab"><%=@erabiltzaileak.abizenak%></label></td>
+				<td><label class="tab"><%=@erabiltzailea.abizenak%></label></td>
 			</tr>
 			<tr>
 				<td><label class="bold">Emaila: </label></td>
-				<td><label class="tab"><%=@erabiltzaileak.emaila%></label></td>
+				<td><label class="tab"><%=@erabiltzailea.emaila%></label></td>
 			</tr>
 			<tr>
 				<td><label class="bold">Helbidea: </label></td>
-				<td><label class="tab"><%=@erabiltzaileak.helbidea%></label></td>
+				<td><label class="tab"><%=@erabiltzailea.helbidea%></label></td>
 			</tr>
 			<tr>
 				<td><label class="bold">Telefonoa: </label></td>
-				<td><label class="tab"><%=@erabiltzaileak.telefonoa%></label></td>
+				<td><label class="tab"><%=@erabiltzailea.telefonoa%></label></td>
 			</tr>
 		</table>
-		<table class="col-sm-12 infoTaula">
+		<table class="col-sm-12 kontuakTaula">
 			<tr>
 				<td>
 					<label class="bold">Kontuak:</label> 
+				</td>
+				<td>
+					<label class="bold">Kopurua:</label> 
 				</td>
 			</tr>
 			<%@kontuak.each do |kontua|%>
 			<tr>
 				<td>
 					<label><%=kontua.kontu_zenbakia %></label>
+				</td>
+				<td>
+					<label><%=kontua.kopurua %>€</label>
 				</td>
 			</tr>
 			<%end%>
@@ -109,7 +113,7 @@
 						<label class="bold">Kopurua:</label> 
 					</td>
 					<td>
-						<label><%=@transakzioak.kopurua%></label>
+						<label><%=@transakzioak.kopurua%>€</label>
 					</td>
 				</tr>
 				<tr>

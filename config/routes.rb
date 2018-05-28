@@ -2,9 +2,8 @@ Rails.application.routes.draw do
  
   root 'welcome#index'
   get 'welcome/index'
-
-  resources :accounts
-  resources :transactions, only: [:index, :new, :create, :show]
+  get 'transactions', to: 'transactions#index'
+  #resources :transactions, only: [:index, :new, :create, :show]
   #get 'operazioa/transakzioa'
   #get 'transakzioa/operazioa', to: 'operazioa#transakzioa'
   #get 'transakzioa', action: :show, controller: 'transactions'
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
   #get 'transakzioa/show/:id', to: 'operazioa#show'
   #get 'transakzioa', to: 'operazioa#index'
 
+  post 'user_session', to: 'user#kontua'
 
   get 'kontua', to: 'user#kontua'
   post 'kontua', to: 'user#kontua'

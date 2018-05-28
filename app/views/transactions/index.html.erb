@@ -1,11 +1,37 @@
-<% @transactions.each do |transaction| %>
-  <div>
-	<%= transaction.created_at %><br/>
-	Nora: <%= transaction.hartzaile_kontua %>	
-  </div>
-  <div>
-  	<p>Azalpena: <%= transaction.azalpena %></p>
-  	<p>Kopurua: <%= transaction.kopurua %>€</p>
-  </div>
-  <hr/>
-<%end%>
+<header class="headerMenu masthead text-center text-white" style="padding: 1rem; position:fixed; left: 0px; top:4rem; width: 100%">
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+
+  <h2>Ongi etorri, <%= session[:user_id] %></h2>
+
+</header>
+
+<section class="col-sm-12" style="margin-top: 13rem; padding: 2.5rem;">
+	<h1>Transakzio berria</h1>
+	<p>Egin transakzio berri bat:</p>
+	<%= form_for (@transaction) do |f| %>
+  	<div class="field">
+  		<%= f.label :hartzaile_kontua,'Hartzailearen kontua: ', :class=>"sr-only" %>
+    	<%= f.text_field :hartzaile_kontua, :class=>"form-control", placeholder: "Hartzailearen kontu zenbakia", style:"width:250px;" %>
+ 	</div>
+  	<div class="field">
+  		<%= f.label :azalpena,'Transazioaren azalpena: ', :class=>"sr-only" %>
+    	<%= f.text_field :azalpena, :class=>"form-control", placeholder: "Azalpena", style:"width:250px;" %>
+  	</div>
+  	<div class="field">
+  		<%= f.label :kopurua,'Diru kopurua: ', :class=>"sr-only" %>
+    	<%= f.text_field :kopurua, :class=>"form-control", placeholder: "Kopurua (€)", style:"width:150px;"%>
+  	</div>
+  	<div class="actions">
+        <%= f.submit :"Bidali", :class=>"btn btn-lg btn-primary bold btn-block submitButton", style:"width:100px; color: black"%>
+    </div>
+  	<% @transaction.errors.full_messages.each do |message| %>
+    <div style="color: red;">
+    	* <%= message %>
+    </div>
+  <%end%>
+<% end %> 
+</section>
+
