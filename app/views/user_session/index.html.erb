@@ -13,22 +13,19 @@
 <section style="margin-top: 15%">
 
     <%= form_for(   :user,
-                    :url => {:controller => 'user_session', :action => 'create'},
+    				:method => "post",
+                    :url => {:action => 'create'},
                     :html => {:class=>"form-signin"}) do |f|%>
 		
         <div class="text-center">            
-            <div class="field">
-                <%= f.label :nan, :class=>"sr-only" %><br />
-                <%= f.text_field :nan, :id=> "inputNan", :class=>"form-control", placeholder:"Erabiltzailea", :required => true%>
-            </div>
-            <div class="field">
-                <%= f.label :password, :class=>"sr-only"%><br />
-                <%= f.password_field :password, :id=> "inputPassword", :class=>"form-control", placeholder: "Pasahitza", :required => true%>
-            </div>
+            <%= f.label :nan, :class=>"sr-only" %>
+            <%= f.text_field :nan, :id=> "inputNan", :class=>"form-control", placeholder:"Erabiltzailea", :required => true%>
+            <%= f.label :password, :class=>"sr-only"%>
+            <%= f.password_field :password, :id=> "inputPassword", :class=>"form-control", placeholder: "Pasahitza", :required => true%>
             <div class="checkbox mb-3">
                 <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+               		<input type="checkbox" value="remember-me"> Remember me
+            	</label>
             </div>
             <div class="actions">
                 <%= f.submit :"Log In", :class=>"btn btn-lg btn-primary btn-block submitButton"%>

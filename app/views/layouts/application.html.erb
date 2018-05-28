@@ -21,16 +21,21 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-            	<li class="nav-item">
-            	  <%= link_to "Log Out", logout_path, method: :delete, :class=>"nav-link" %>
-            	</li>
-              
-    	      	<li class="nav-item">
-            	  <%= link_to "Sign Up", "/signin", :class=>"nav-link" %>
-             	</li>
-              <li class="nav-item">
-                <%= link_to "Log In", "/login", :class=>"nav-link" %>
-              </li>      
+              <% if session[:user_nan] %>
+              	<li class="nav-item">
+              	  <%= link_to "Log Out", logout_path, method: :delete, :class=>"nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to session[:user_izena], "/kontua", :class=>"nav-link", method: :post%>
+              	</li>
+              <% else %>
+      	      	<li class="nav-item">
+              	  <%= link_to "Sign Up", "/signup", :class=>"nav-link" %>
+               	</li>
+                <li class="nav-item">
+                  <%= link_to "Log In", "/login", :class=>"nav-link" %>
+                </li>  
+              <% end %>    
             </ul>
           </div>
       </div>

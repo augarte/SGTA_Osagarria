@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   get 'kontua', to: 'user#kontua'
+  post 'kontua', to: 'user#kontua'
 
   resources :user_session
     get 'login', to: 'user_session#index'

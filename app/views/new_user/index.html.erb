@@ -8,30 +8,32 @@
     </h1>
 </header>
 
-<section><label> </label></section>
-
 <section style="margin-top: 15%">
 
     <%= form_for(   :user,
-                    :url => {:controller => 'user_sessions', :action => 'create'},
-                    :html => {:class=>"form-signin"}) do |f|%>
+                    :url => {:controller => 'new_user', :action => 'create'},
+                    :html => {:class=>"form-signin", :style=>"z-index: -1"}) do |f|%>
 
-        <div class="text-center">            
-            <div class="field">
-                <%= f.label :username, :class=>"sr-only" %><br />
-                <%= f.text_field :username, :id=> "inputEmail", :class=>"form-control", placeholder:"Erabiltzailea", :required => true%>
+        <div class="text-center" >            
+            <%= f.label :nanLabel, :class=>"sr-only" %>
+            <%= f.text_field :nan, :id=> "inputNan", :class=>"form-control", placeholder:"NAN", :required => true%>
+            <%= f.label :passwordLabel, :class=>"sr-only"%>
+            <%= f.password_field :password, :id=> "inputPassword", :class=>"form-control", placeholder: "Pasahitza", :required => true%>
+            <%= f.label :emailaLabel, :class=>"sr-only"%>
+            <%= f.text_field :emaila, :id=> "inputEmail", :class=>"form-control", placeholder: "Emaila", :required => true%>
+            <%= f.label :izenaLabel, :class=>"sr-only"%>
+            <%= f.text_field :izena, :id=> "inputIzena", :class=>"form-control", placeholder: "Izena", :required => true%>
+            <%= f.label :abizenakLabel, :class=>"sr-only"%>
+            <%= f.text_field :abizenak, :id=> "inputAbizenak", :class=>"form-control", placeholder: "Abizenak", :required => true%>
+            <%= f.label :telefonoaLabel, :class=>"sr-only"%>
+            <%= f.text_field :telefonoa, :id=> "inputTelefonoa", :class=>"form-control", placeholder: "Telefonoa", :required => true%>
+            <%= f.label :helbideaLabel, :class=>"sr-only"%>
+            <%= f.text_field :helbidea, :id=> "inputHelbidea", :class=>"form-control", placeholder: "Helbidea", :required => true%>
             </div>
-            <div class="field">
-                <%= f.label :password, :class=>"sr-only"%><br />
-                <%= f.password_field :password, :id=> "inputPassword", :class=>"form-control", placeholder: "Pasahitza", :required => true%>
-            </div>
-            <div class="checkbox mb-3">
-                <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-            </div>
+
             <div class="actions">
-                <%= f.submit :"Sign Up", :class=>"btn btn-lg btn-primary btn-block submitButton"%>
+                <%= f.submit :"Sign Up", :class=>"btn btn-lg btn-primary btn-block submitButton", disabled: true %>
+                <label>Funtzio hau ez dago prest</label>
             </div>
             <p class="mt-5 mb-3 text-muted"></p>
         </div>

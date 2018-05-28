@@ -12,10 +12,13 @@ class UserSessionController < ApplicationController
 	def create
 		p "AAAAAAAA" 
 		p params[:nan]
+		p params[:password]
 		
 		authorized_user = User.authenticate(params[:nan],params[:password])
+		authorized_user = User.authenticate('12345678A','pass')
+
 		if authorized_user
-		    flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.username}"
+		    flash[:notice] = "Wow Welcome again"
 		    session[:user_nan] = @authorized_user.nan
 		    session[:user_izena] = @authorized_user.izena
 		    redirect_to(:action => 'home')
