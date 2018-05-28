@@ -1,7 +1,11 @@
 class UserSessionsController < ApplicationController
+    
+    # GET /user_sessions/new
     def new
 	@user = User.new
     end 
+
+    # POST /user_sessions
     def create
 	authorized_user = User.authenticate(params[:username_or_email],params[:login_password])
 	if authorized_user
@@ -13,6 +17,8 @@ class UserSessionsController < ApplicationController
 	    render "login"	
 	end
     end
+    
+    # DELETE /user_sessions/:id
     def destroy
 	logout
 	redirect_to(:users, message: "Logged out")
