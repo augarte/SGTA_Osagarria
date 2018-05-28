@@ -21,12 +21,20 @@
 //= require welcome
 //= require_tree .
 document.addEventListener("turbolinks:load", function() {
+	checkFooter();
+});
+
+
+function checkFooter(){
 	if ($("body").height() > $(window).height()) {
+		$('footer').css({'display' : 'block',
+					 'position' : 'relative'});
     }
     else{
     	$('footer').css({'position' : 'fixed',
-    					'left' : '0',
-						'bottom' : '0',
-						'width' : '100%'});
+    					 'left' : '0',
+						 'bottom' : '0',
+						 'width' : '100%'});
     }
-})
+};
+

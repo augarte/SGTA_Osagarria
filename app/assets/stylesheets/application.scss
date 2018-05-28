@@ -10,7 +10,6 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .sekzioDiv{
-	display: none;
 	margin-bottom: 4rem;
 }
 
@@ -33,6 +32,18 @@ h1, h2, h3, h4, h5, h6{
 	margin-right: 10%;
 	text-align: left;
 	padding-left: 0px;
+}
+
+.transakzioTaula{
+	display: inline;
+	text-align: left;
+}
+
+.transakzioTaula tbody{
+	border: 1px solid black;
+	display: inline-block;
+	padding: 2rem;
+	margin: 1rem;
 }
 
 .content{

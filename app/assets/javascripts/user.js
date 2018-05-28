@@ -20,5 +20,6 @@ $(document).ready(function(){
 
 	function showDiv(object){
 		object.show().siblings().hide();
+		checkFooter();
 	};
 });
