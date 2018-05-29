@@ -28,27 +28,35 @@
 <section class="col-sm-12" style="margin-top: 13rem; padding: 2.5rem;">
 	<h1>Transakzio berria</h1>
 	<p>Egin transakzio berri bat:</p>
-	<%= form_for (@transaction) do |f| %>
-  	<div class="field">
-  		<%= f.label :hartzaile_kontua,'Hartzailearen kontua: ', :class=>"sr-only" %>
-    	<%= f.text_field :hartzaile_kontua, :class=>"form-control", placeholder: "Hartzailearen kontu zenbakia", style:"width:250px;" %>
- 	</div>
-  	<div class="field">
-  		<%= f.label :azalpena,'Transazioaren azalpena: ', :class=>"sr-only" %>
-    	<%= f.text_field :azalpena, :class=>"form-control", placeholder: "Azalpena", style:"width:250px;" %>
-  	</div>
-  	<div class="field">
-  		<%= f.label :kopurua,'Diru kopurua: ', :class=>"sr-only" %>
-    	<%= f.text_field :kopurua, :class=>"form-control", placeholder: "Kopurua (€)", style:"width:150px;"%>
-  	</div>
-  	<div class="actions">
+	<%= form_for( :transaction,
+                :method => "post",
+                :url => {:controller => 'transactions', :action => 'create'}
+                ) do |f| %>
+
+      <%= f.select 'bidaltzaile_kontua', options_from_collection_for_select(@kontuak, 'kontu_zenbakia', 'kontu_zenbakia'), :required => true%>
+
+  		<%= f.label :hartzaile_kontuaL,'Hartzailearen kontua: ', :class=>"sr-only" %>
+    	<%= f.text_field :hartzaile_kontua, :class=>"form-control", placeholder: "Hartzailearen kontu zenbakia", style:"width:250px;", :required => true%>
+
+  		<%= f.label :azalpenaL,'Transazioaren azalpena: ', :class=>"sr-only" %>
+    	<%= f.text_field :azalpena, :class=>"form-control", placeholder: "Azalpena", style:"width:250px;"%>
+
+  		<%= f.label :kopuruaL,'Diru kopurua: ', :class=>"sr-only" %>
+    	<%= f.text_field :kopurua, :class=>"form-control", placeholder: "Kopurua (€)", style:"width:150px;", :required => true%>
+
+  	<div class="actions" style="margin-top: 2rem">
         <%= f.submit :"Bidali", :class=>"btn btn-lg btn-primary bold btn-block submitButton", style:"width:100px; color: black"%>
     </div>
+    <center>
+      <label class="notice"><%= notice %></label>
+      <label class="alert" style="color: red"><%= alert %></label>
+    </center>
+
   	<% @transaction.errors.full_messages.each do |message| %>
-    <div style="color: red;">
-    	* <%= message %>
-    </div>
-  <%end%>
+      <div style="color: red;">
+      	* <%= message %>
+      </div>
+    <%end%>
 <% end %> 
 </section>
 
