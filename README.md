@@ -1,25 +1,20 @@
-# README
+# SareBank
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby version
 
-Things you may want to cover:
+### System dependencies
 
-* Ruby version
+### Configuration
 
-* System dependencies
+### Database creation
 
-* Configuration
+### Database initialization
 
-* Database creation
+### How to run the test suite
 
-* Database initialization
+### Services (job queues, cache servers, search engines, etc.)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+### Deployment instructions
 
 1. Ruby eta Rails-ekin jarraituz, hauek instalatzea beharrezkoa izango da. Ireki Ubuntuko terminala eta hurrengo aginduak sartu:
 
@@ -60,10 +55,10 @@ Things you may want to cover:
 	
 6. Erabiltzailearekin logeatu (erabiltzailea = 12345678A eta pasahitza = pass)
 
-* Egileak
+### Egileak
 
-	[aps54](https://github.com/aps54)
-	
-	[begosustatx](https://github.com/begosustatx)
-	
-	[augarte](https://github.com/augarte)
+[aps54](https://github.com/aps54)
+
+[begosustatx](https://github.com/begosustatx)
+
+[augarte](https://github.com/augarte)
