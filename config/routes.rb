@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'kontua', to: 'user#kontua'
   post 'kontua', to: 'user#kontua'
+  post 'kontuBerria', to: 'user#create'
 
   get 'login', to: 'user_session#index'
   post 'login', to: 'user_session#create'

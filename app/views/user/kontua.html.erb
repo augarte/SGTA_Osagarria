@@ -63,6 +63,11 @@
 				<td>
 					<label class="bold">Kopurua:</label> 
 				</td>
+				<td rowspan="<%=@kontuak.count+1%>">
+					<%= link_to "kontuBerria", :method => :post do%>
+						<%= image_tag("add.png", :alt=>"add", :style=>"height: 25px")%>
+					<%end%>
+				</td>
 			</tr>
 			<%@kontuak.each do |kontua|%>
 			<tr>
