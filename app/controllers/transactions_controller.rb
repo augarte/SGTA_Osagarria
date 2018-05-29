@@ -26,7 +26,7 @@ class TransactionsController < ApplicationController
               t.bidaltzaile_kontua = kontu_zenbakia,
               t.azalpena = azalpena,
               t.hartzaile_kontua = hartzaile_kontua,
-              t.kopurua = kopurua
+              t.kopurua = kopurua,
               t.data = Time.now.strftime("%Y-%m-%d")
             end
           else
@@ -35,7 +35,7 @@ class TransactionsController < ApplicationController
               t.bidaltzaile_kontua = kontu_zenbakia,
               t.azalpena = azalpena,
               t.hartzaile_kontua = hartzaile_kontua,
-              t.kopurua = kopurua
+              t.kopurua = kopurua,
               t.data = Time.now.strftime("%Y-%m-%d")
             end
           end

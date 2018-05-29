@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "erabiltzaile_id", limit: 9, null: false
     t.integer "kopurua", default: 0, null: false
     t.date "sortze_data", null: false
-    t.index ["erabiltzaile_id"], name: "erabiltzaile_id"
+    t.index ["kontu_zenbakia"], name: "kontu_zenbakia"
   end
 
   create_table "Favorites", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
