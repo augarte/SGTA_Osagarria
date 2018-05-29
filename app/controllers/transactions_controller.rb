@@ -40,10 +40,10 @@ class TransactionsController < ApplicationController
             end
           end
           totalBidaltzaile = @accountBidali.kopurua-kopurua
-          totalJasotzaile = @accountBidali.kopurua+kopurua
+          totalJasotzaile = @accountJaso.kopurua+kopurua
 
-          @accountBidali = @accountBidali.update(:kopurua => totalBidaltzaile)
-          @accountJaso = @accountJaso.update(:kopurua => totalJasotzaile)
+          @accountBidali = @accountBidali.update_attribute(:kopurua, totalBidaltzaile)
+          @accountJaso = @accountJaso.update_attribute(:kopurua, totalJasotzaile)
 
           @transaction.save
         end
