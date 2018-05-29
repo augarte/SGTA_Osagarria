@@ -10,45 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_26_172424) do
+ActiveRecord::Schema.define(version: 0) do
 
-  create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "transakzio_kodea"
-    t.integer "bidaltzaile_kontua"
+  create_table "Accounts", primary_key: "kontu_zenbakia", id: :string, limit: 24, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "erabiltzaile_id", limit: 9, null: false
+    t.integer "kopurua", default: 0, null: false
+    t.date "sortze_data", null: false
+    t.index ["erabiltzaile_id"], name: "erabiltzaile_id"
+  end
+
+  create_table "Favorites", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "erabiltzaile_id", limit: 9, null: false
+    t.string "faborito_id", limit: 9, null: false
+    t.index ["erabiltzaile_id"], name: "erabiltzaile_id"
+    t.index ["faborito_id"], name: "faborito_id"
+  end
+
+  create_table "Transactions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "bidaltzaile_kontua", limit: 24, null: false
+    t.string "hartzaile_kontua", limit: 24, null: false
+    t.integer "kopurua", null: false
     t.string "azalpena"
-    t.integer "hartzaile_kontua"
-    t.decimal "kopurua", precision: 2
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.date "data", null: false
+    t.index ["bidaltzaile_kontua"], name: "bidaltzaile_kontua"
+    t.index ["hartzaile_kontua"], name: "hartzaile_kontua"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "izena"
-    t.string "abizena"
-    t.string "pasahitza"
-    t.string "emaila"
-    t.string "telefonoa"
-    t.string "helbidea"
-    t.date "sortze_data"
-    t.string "nan"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "Users", primary_key: "nan", id: :string, limit: 9, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "izena", limit: 100, null: false
+    t.string "abizenak", limit: 100, null: false
+    t.string "pasahitza", null: false
+    t.string "emaila", limit: 100, null: false
+    t.integer "telefonoa", null: false
+    t.string "helbidea", null: false
+    t.date "sortze_data", null: false
+    t.index ["nan"], name: "nan", unique: true
   end
 
-  create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "kontu_zenbakia"
-    t.string "erabiltzaile_id"
-    t.decimal "kopurua", precision: 2
-    t.date "sortze_data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "id"
-    t.string "erabiltzaile_id"
-    t.string "faborito_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "Accounts", "Users", column: "erabiltzaile_id", primary_key: "nan", name: "accounts_ibfk_1"
+  add_foreign_key "Favorites", "Users", column: "erabiltzaile_id", primary_key: "nan", name: "favorites_ibfk_1"
+  add_foreign_key "Favorites", "Users", column: "faborito_id", primary_key: "nan", name: "favorites_ibfk_2"
+  add_foreign_key "Transactions", "Accounts", column: "bidaltzaile_kontua", primary_key: "kontu_zenbakia", name: "transactions_ibfk_1"
+  add_foreign_key "Transactions", "Accounts", column: "hartzaile_kontua", primary_key: "kontu_zenbakia", name: "transactions_ibfk_2"
 end

@@ -6,7 +6,9 @@ class TransactionsController < ApplicationController
 
   # POST /transactions
   def create
-    #kontua = Account.find_by()
+    nan = session[:user_nan]
+    @user = Account.find(nan)
+    
     if Transaction.last
       @transaction = Transaction.new(id: Transaction.last.id + 1, bidaltzaile_kontua: 10001, azalpena: params[:transaction][:azalpena], hartzaile_kontua: params[:transaction][:hartzaile_kontua], kopurua: params[:transaction][:kopurua])
     else

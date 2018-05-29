@@ -10,11 +10,14 @@ class UserSessionController < ApplicationController
 
 	# POST /user_session
 	def create
-		#authorized_user = User.authenticate(params[:nan],params[:password])
-		authorized_user = User.authenticate('12345678A','pass')
-		if authorized_user
+		nan = params[:user][:nan]
+		pass = params[:user][:password]
+		@user = User.authenticate(nan, pass)
+		if @user
 		    flash[:notice] = "Wow Welcome again"
-		    redirect_to(:action => 'home')
+		    session[:user_nan] = @user.nan
+		    session[:user_izena] = @user.izena
+		    redirect_to(:controller => 'user', :action => 'kontua')
 		else
 		    flash[:alert] = "Invalid Username or Password"
 	    	render "index"	

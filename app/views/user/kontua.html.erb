@@ -19,7 +19,7 @@
 					</label>
 				</li>
 				<li>
-					<%= link_to "Transakzio berria", "/transactions", :class=>"nav-link" %>
+					<%= link_to "Transakzio berria", "/transactions", :class=>"nav-link bold" %>
 				</li>
 			</ul>
 		</div>
@@ -82,207 +82,58 @@
 
 	<div id="tHistoria_d" class="sekzioDiv">
 		<table class="col-sm-12 transakzioTaula" style="z-index: -1; display: block;">
-			<tbody class="tTbody">
-				<tr>
-					<td>
-						<label class="bold">Zure kontua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.bidaltzaile_kontua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Jasotzailearen kontua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.hartzaile_kontua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Transakzio id zenbakia:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.id%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Kopurua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.kopurua%>€</label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Azalpena:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.azalpena%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Transakzio data:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.data%></label>
-					</td>
-				</tr>
-			</tbody>
-			<tbody class="tTbody">
-				<tr>
-					<td>
-						<label class="bold">Zure kontua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.bidaltzaile_kontua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Jasotzailearen kontua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.hartzaile_kontua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Transakzio id zenbakia:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.id%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Kopurua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.kopurua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Azalpena:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.azalpena%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Transakzio data:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.data%></label>
-					</td>
-				</tr>
-			</tbody>
-			<tbody class="tTbody">
-				<tr>
-					<td>
-						<label class="bold">Zure kontua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.bidaltzaile_kontua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Jasotzailearen kontua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.hartzaile_kontua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Transakzio id zenbakia:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.id%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Kopurua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.kopurua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Azalpena:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.azalpena%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Transakzio data:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.data%></label>
-					</td>
-				</tr>
-			</tbody>
-			<tbody class="tTbody">
-				<tr>
-					<td>
-						<label class="bold">Zure kontua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.bidaltzaile_kontua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Jasotzailearen kontua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.hartzaile_kontua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Transakzio id zenbakia:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.id%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Kopurua:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.kopurua%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Azalpena:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.azalpena%></label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label class="bold">Transakzio data:</label> 
-					</td>
-					<td>
-						<label><%=@transakzioak.data%></label>
-					</td>
-				</tr>
-			</tbody>
-
+			<%@transakzioak.each do |transakzioa|%>
+				<tbody class="tTbody">
+					<tr>
+						<td>
+							<label class="bold">Zure kontua:</label> 
+						</td>
+						<td>
+							<label><%=transakzioa.bidaltzaile_kontua%></label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="bold">Jasotzailearen kontua:</label> 
+						</td>
+						<td>
+							<label><%=transakzioa.hartzaile_kontua%></label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="bold">Transakzio id zenbakia:</label> 
+						</td>
+						<td>
+							<label><%=transakzioa.id%></label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="bold">Kopurua:</label> 
+						</td>
+						<td>
+							<label><%=transakzioa.kopurua%>€</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="bold">Azalpena:</label> 
+						</td>
+						<td>
+							<label><%=transakzioa.azalpena%></label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="bold">Transakzio data:</label> 
+						</td>
+						<td>
+							<label><%=transakzioa.data%></label>
+						</td>
+					</tr>
+				</tbody>
+			<%end%>
 		</table>
 	</div>
 </section>

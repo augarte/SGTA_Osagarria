@@ -14,13 +14,13 @@
 
     <%= form_for(   :user,
     				:method => "post",
-                    :url => {:action => 'create'},
+                    :url => {:controller => 'user_session', :action => 'create'},
                     :html => {:class=>"form-signin"}) do |f|%>
 		
         <div class="text-center">            
-            <%= f.label :nan, :class=>"sr-only" %>
+            <%= f.label :nanLabel, :class=>"sr-only" %>
             <%= f.text_field :nan, :id=> "inputNan", :class=>"form-control", placeholder:"Erabiltzailea", :required => true%>
-            <%= f.label :password, :class=>"sr-only"%>
+            <%= f.label :passwordLabel, :class=>"sr-only"%>
             <%= f.password_field :password, :id=> "inputPassword", :class=>"form-control", placeholder: "Pasahitza", :required => true%>
             <div class="checkbox mb-3">
                 <label>
