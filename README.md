@@ -53,7 +53,8 @@
 
   	localhost:3000
 	
-6. Erabiltzailearekin logeatu 
+6. Erabiltzailearekin logeatu
+
 	erabiltzailea = 12345678A
 	pasahitza = pass
 
