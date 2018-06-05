@@ -29,7 +29,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: pg
+  adapter: postgresql
   database: bankua
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
